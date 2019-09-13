@@ -1,0 +1,81 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run -d chrome
+
+## exception
+
+UnsupportedError: Unsupported operation: Cannot create multiple isolates for the same app
+
+```
+#0      ChromeProxyService.createIsolate (package:dwds/src/services/chrome_proxy_service.dart:108:7)
+<asynchronous suspension>
+#1      DevHandler._handleConnection.<anonymous closure> (package:dwds/src/handlers/dev_handler.dart:259:15)
+<asynchronous suspension>
+#2      _rootRunUnary (dart:async/zone.dart:1132:38)
+#3      _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#4      _CustomZone.runUnaryGuarded (dart:async/zone.dart:931:7)
+#5      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:336:11)
+#6      _DelayedData.perform (dart:async/stream_impl.dart:591:14)
+#7      _StreamImplEvents.handleNext (dart:async/stream_impl.dart:707:11)
+#8      _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:667:7)
+#9      _rootRun (dart:async/zone.dart:1120:38)
+#10     _CustomZone.run (dart:async/zone.dart:1021:19)
+#11     _CustomZone.runGuarded (dart:async/zone.dart:923:7)
+#12     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:963:23)
+#13     _rootRun (dart:async/zone.dart:1124:13)
+#14     _CustomZone.run (dart:async/zone.dart:1021:19)
+#15     _CustomZone.runGuarded (dart:async/zone.dart:923:7)
+#16     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:963:23)
+#17     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#18     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#19     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:116:13)
+#20     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:173:5)
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel master, v1.10.2-pre.57, on Microsoft Windows [Version 10.0.17134.765], locale en-IN)
+    [32m•[39m Flutter version 1.10.2-pre.57 at F:\Dev\flutter-sdk\flutter
+    [32m•[39m Framework revision f174c0e2ba (17 hours ago), 2019-09-12 08:24:48 -0700
+    [32m•[39m Engine revision 7ea9884ab0
+    [32m•[39m Dart version 2.5.0 (build 2.5.0-dev.4.0 be66176534)
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 29.0.0)
+    [32m•[39m Android SDK at F:\Dev\Android\sdk
+    [32m•[39m Android NDK location not configured (optional; useful for native profiling support)
+    [32m•[39m Platform android-29, build-tools 29.0.0
+    [32m•[39m ANDROID_HOME = F:\Dev\Android\sdk
+    [32m•[39m Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b03)
+    [33m![39m Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+
+[32m[✓][39m Android Studio (version 3.5)
+    [32m•[39m Android Studio at C:\Program Files\Android\Android Studio
+    [32m•[39m Flutter plugin version 38.2.3
+    [32m•[39m Dart plugin version 191.8423
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b03)
+
+[33m[!][39m IntelliJ IDEA Community Edition (version 2016.3)
+    [32m•[39m IntelliJ at C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.3.3
+    [31m✗[39m Flutter plugin not installed; this adds Flutter specific functionality.
+    [31m✗[39m Dart plugin not installed; this adds Dart specific functionality.
+    [32m•[39m For information about installing plugins, see
+      https://flutter.dev/intellij-setup/#installing-the-plugins
+    [31m✗[39m This install is older than the minimum recommended version of 2017.1.0.
+
+[32m[✓][39m VS Code (version 1.38.0)
+    [32m•[39m VS Code at C:\Users\Shreyas\AppData\Local\Programs\Microsoft VS Code
+    [32m•[39m Flutter extension version 3.4.1
+
+[32m[✓][39m Connected device (2 available)
+    [32m•[39m Chrome • chrome • web-javascript • Google Chrome 76.0.3809.132
+    [32m•[39m Server • web    • web-javascript • Flutter Tools
+
+[33m![39m Doctor found issues in 2 categories.
+```
