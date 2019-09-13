@@ -1,10 +1,10 @@
 # See https://www.dartlang.org/guides/libraries/private-files
 
 # Files and directories created by pub
-build/
-ios/
-android/
-test/
+/build
+/ios
+/android
+/test
 
 .dart_tool/
 .packages
